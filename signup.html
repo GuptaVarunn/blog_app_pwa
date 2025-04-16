@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Blog App</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .form-group input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .password-requirements {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .password-requirements ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+        }
+
+        .password-requirements li {
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .password-requirements li::before {
+            content: "•";
+            color: #3498db;
+        }
+
+        .terms {
+            display: flex;
+            gap: 0.5rem;
+            align-items: start;
+            margin-top: 1rem;
+        }
+
+        .terms input[type="checkbox"] {
+            margin-top: 0.25rem;
+        }
+
+        .terms label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .auth-links {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .auth-links a {
+            color: #666;
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-login p {
+            color: #666;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .social-login p::before,
+        .social-login p::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .social-login p::before {
+            left: 0;
+        }
+
+        .social-login p::after {
+            right: 0;
+        }
+
+        .social-buttons {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .btn-social {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .btn-social:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Blog App</div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About Us</a>
+            <a href="#" class="search-btn">Search</a>
+            <a href="./profile.html" class="profile-icon">
+                <img src="./assets/profile-icon.svg" alt="Profile">
+            </a>
+        </div>
+    </nav>
+
+    <main class="auth-container">
+        <div class="auth-header">
+            <h1>Create Account</h1>
+            <p>Join our community of readers and writers</p>
+        </div>
+
+        <form class="auth-form" onsubmit="event.preventDefault(); window.location.href='./profile.html'">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+                <div class="password-requirements">
+                    Password requirements:
+                    <ul>
+                        <li>At least 8 characters long</li>
+                        <li>Contains uppercase & lowercase letters</li>
+                        <li>Contains at least one number</li>
+                        <li>Contains at least one special character</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">Create Account</button>
+        </form>
+
+        <div class="auth-links">
+            Already have an account? <a href="./signin.html">Sign In</a>
+        </div>
+
+        <div class="social-login">
+            <p>Or continue with</p>
+            <div class="social-buttons">
+                <button class="btn-social">
+                    <img src="./assets/icons/google.svg" alt="Google" width="24" height="24">
+                    Continue with Google
+                </button>
+                <button class="btn-social">
+                    <img src="./assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    Continue with GitHub
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

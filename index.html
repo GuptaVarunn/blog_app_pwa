@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/blog-cards.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Blog">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Blog App</div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About Us</a>
+            <a href="#" class="search-btn">Search</a>
+            <a href="./profile.html" class="profile-icon">
+                <img src="./assets/profile-icon.svg" alt="Profile">
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="blog-grid">
+            <!-- Blog cards will be dynamically added here -->
+        </div>
+    </main>
+    <script src="./js/blogData.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

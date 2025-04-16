@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Blog App</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <style>
+        .about-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Blog App</div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html" class="active">About Us</a>
+            <a href="#" class="search-btn">Search</a>
+            <a href="./profile.html" class="profile-icon">
+                <img src="./assets/profile-icon.svg" alt="Profile">
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="about-section">
+            <h1>About Blog App</h1>
+            <p>Welcome to Blog App, your go-to platform for insightful articles across various domains. Our mission is to provide high-quality content that educates, inspires, and engages readers from all walks of life.</p>
+            <p>Whether you're interested in technology, education, health, or personal development, our diverse team of writers brings you well-researched and thoughtfully crafted content to help you stay informed and grow.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Features</h2>
+            <ul>
+                <li>Diverse range of topics from expert authors</li>
+                <li>User-friendly interface for seamless reading experience</li>
+                <li>Personalized content recommendations</li>
+                <li>Easy-to-use search functionality</li>
+                <li>Mobile-responsive design for reading on any device</li>
+            </ul>
+        </div>
+
+        <div class="about-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://placehold.co/200x200/2c3e50/FFFFFF/png?text=G" alt="Girish">
+                    <h3>Girish</h3>
+                    <p>Education Expert</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/200x200/27ae60/FFFFFF/png?text=A" alt="Ajay">
+                    <h3>Ajay</h3>
+                    <p>Technical Content Writer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/200x200/8e44ad/FFFFFF/png?text=S" alt="Sushant">
+                    <h3>Sushant</h3>
+                    <p>Tech Analyst</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/200x200/c0392b/FFFFFF/png?text=V" alt="Varun">
+                    <h3>Varun</h3>
+                    <p>Fitness Writer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/200x200/d35400/FFFFFF/png?text=A" alt="Akshat">
+                    <h3>Akshat</h3>
+                    <p>Motivational Writer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/200x200/3498db/FFFFFF/png?text=H" alt="Harsh">
+                    <h3>Harsh</h3>
+                    <p>UI/UX Specialist</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./profile.html">Profile</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Coding</a></li>
+                    <li><a href="#">GATE Exam</a></li>
+                    <li><a href="#">Health & Fitness</a></li>
+                    <li><a href="#">Tech</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="./assets/icons/github.svg" alt="GitHub">GitHub</a>
+                    <a href="#"><img src="./assets/icons/google.svg" alt="Google">Google</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for updates and new posts.</p>
+                <form id="newsletter-form" style="margin-top: 1rem;">
+                    <input type="email" placeholder="Enter your email" style="padding: 0.5rem; width: 100%; margin-bottom: 0.5rem;">
+                    <button type="submit" style="background: var(--accent-color); color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Blog App. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

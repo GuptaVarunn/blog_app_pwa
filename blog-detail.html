@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail - Blog App</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/blog-cards.css">
+    <script src="./js/features.js" defer></script>
+    <style>
+        .blog-detail {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .blog-header-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-metadata {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .author-info {
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        .blog-actions {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .share-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .share-button:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .comments-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comment {
+            display: grid;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .comment-author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .comment-author-name {
+            font-weight: 600;
+        }
+
+        .comment-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .comment-form {
+            margin-top: 2rem;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .comment-form button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background: var(--accent-hover);
+        }
+
+        .post-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .blog-stats {
+            display: flex;
+            gap: 2rem;
+            color: #666;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #e3f2fd;
+            color: #1976d2;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .blog-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-actions {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-action {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action:hover {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Blog App</div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About Us</a>
+            <a href="#" class="search-btn">Search</a>
+            <a href="./profile.html" class="profile-icon">
+                <img src="./assets/profile-icon.svg" alt="Profile">
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="blog-detail">
+            <img src="" alt="" class="blog-header-image" id="blog-header-image">
+            <div class="blog-content">
+                <div class="blog-metadata">
+                    <div class="blog-author">
+                        <img src="" alt="" class="author-avatar" id="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name" id="author-name"></div>
+                            <div class="post-date" id="post-date"></div>
+                        </div>
+                    </div>
+                    <div class="blog-stats">
+                        <span id="read-time"></span>
+                        <span>★ <span id="rating"></span></span>
+                    </div>
+                </div>
+                <h1 id="blog-title"></h1>
+                <div id="blog-content"></div>
+                
+                <div class="blog-actions">
+                    <button class="share-button" onclick="shareOnTwitter()">
+                        <img src="./assets/icons/twitter.svg" alt="Twitter" width="20">
+                        Share on Twitter
+                    </button>
+                    <button class="share-button" onclick="shareOnLinkedIn()">
+                        <img src="./assets/icons/linkedin.svg" alt="LinkedIn" width="20">
+                        Share on LinkedIn
+                    </button>
+                </div>
+
+                <div class="comments-section">
+                    <h2>Comments</h2>
+                    <div class="comments-list">
+                        <div class="comment">
+                            <div class="comment-header">
+                                <img src="https://placehold.co/100x100/2c3e50/FFFFFF/png?text=J" alt="John" class="comment-author-avatar">
+                                <div>
+                                    <div class="comment-author-name">John Doe</div>
+                                    <div class="comment-date">2024-01-20</div>
+                                </div>
+                            </div>
+                            <p>Great article! Very informative and well-written. Looking forward to more content like this.</p>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-header">
+                                <img src="https://placehold.co/100x100/27ae60/FFFFFF/png?text=S" alt="Sarah" class="comment-author-avatar">
+                                <div>
+                                    <div class="comment-author-name">Sarah Smith</div>
+                                    <div class="comment-date">2024-01-19</div>
+                                </div>
+                            </div>
+                            <p>This helped me understand the concept better. Thanks for sharing!</p>
+                        </div>
+                    </div>
+
+                    <div class="comment-form">
+                        <h3>Leave a Comment</h3>
+                        <form id="comment-form">
+                            <textarea placeholder="Write your comment here..."></textarea>
+                            <button type="submit">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="./js/blogData.js"></script>
+    <script>
+        // Function to get URL parameters
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to render blog detail
+        function renderBlogDetail() {
+            const blogId = parseInt(getUrlParam('id'));
+            const blog = blogPosts.find(post => post.id === blogId);
+
+            if (!blog) {
+                window.location.href = './index.html';
+                return;
+            }
+
+            // Update header image with fallback
+            const headerImage = document.getElementById('blog-header-image');
+            headerImage.src = blog.image || 'https://placehold.co/800x400/2c3e50/FFFFFF/png?text=Blog+Image';
+            headerImage.alt = blog.title;
+
+            // Update author info
+            const authorAvatar = document.getElementById('author-avatar');
+            authorAvatar.src = `https://placehold.co/100x100/2c3e50/FFFFFF/png?text=${blog.author.charAt(0)}`;
+            authorAvatar.alt = blog.author;
+            document.getElementById('author-name').textContent = blog.author;
+            document.getElementById('post-date').textContent = blog.postedDate;
+
+            // Update blog content
+            document.getElementById('blog-title').textContent = blog.title;
+            document.getElementById('blog-content').innerHTML = blog.content;
+
+            // Update stats
+            document.getElementById('read-time').textContent = `${estimateReadingTime(blog.content)} min read`;
+            document.getElementById('rating').textContent = blog.rating || '4.5';
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBlogDetail();
+            initCommentSystem();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+// Sample blog data
+const blogPosts = [
+    {
+        id: 1,
+        title: 'Getting Started with Web Development',
+        category: 'Coding',
+        excerpt: 'A comprehensive guide for beginners looking to start their journey in web development. Learn the basics of HTML, CSS, and JavaScript.',
+        author: 'Akshat',
+        readTime: '8 min',
+        postedDate: '2024-01-15',
+        rating: 4.8,
+        image: 'https://placehold.co/600x400/2c3e50/FFFFFF/png?text=Web+Development',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 2,
+        title: 'GATE Exam Preparation Strategy',
+        category: 'GATE Exam',
+        excerpt: 'Expert tips and strategies to crack GATE exam. Learn time management, subject prioritization, and effective study techniques.',
+        author: 'Girish',
+        readTime: '12 min',
+        postedDate: '2024-01-12',
+        rating: 4.9,
+        image: 'https://placehold.co/600x400/27ae60/FFFFFF/png?text=GATE+Exam',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 3,
+        title: 'Staying Fit While Coding',
+        category: 'Health & Fitness',
+        excerpt: 'Essential tips for maintaining physical health while spending long hours coding. Learn about exercises and healthy habits.',
+        author: 'Varun',
+        readTime: '6 min',
+        postedDate: '2024-01-10',
+        rating: 4.7,
+        image: 'https://placehold.co/600x400/8e44ad/FFFFFF/png?text=Fitness',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 4,
+        title: 'Latest Tech Trends 2024',
+        category: 'Tech',
+        excerpt: 'Exploring the cutting-edge technologies shaping our future. From AI to quantum computing, stay updated with tech trends.',
+        author: 'Sushant',
+        readTime: '10 min',
+        postedDate: '2024-01-08',
+        rating: 4.6,
+        image: 'https://placehold.co/600x400/c0392b/FFFFFF/png?text=Tech+Trends',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 5,
+        title: 'Building Mental Resilience',
+        category: 'Motivation',
+        excerpt: 'Develop a strong mindset to overcome challenges in your professional and personal life. Learn practical techniques for mental strength.',
+        author: 'Girish',
+        readTime: '7 min',
+        postedDate: '2024-01-05',
+        rating: 4.9,
+        image: 'https://placehold.co/600x400/d35400/FFFFFF/png?text=Motivation',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 6,
+        title: 'Engineering Mathematics Simplified',
+        category: 'Engineering Studies',
+        excerpt: 'Breaking down complex mathematical concepts for engineering students. Master calculus, linear algebra, and more.',
+        author: 'Akshat',
+        readTime: '15 min',
+        postedDate: '2024-01-03',
+        rating: 4.8,
+        image: 'https://placehold.co/600x400/16a085/FFFFFF/png?text=Engineering+Math',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 7,
+        title: 'Mindful Programming Practices',
+        category: 'Productivity',
+        excerpt: 'Learn how to write better code through mindfulness and focused development practices.',
+        author: 'Harsh',
+        readTime: '9 min',
+        postedDate: '2024-01-20',
+        rating: 4.7,
+        image: 'https://placehold.co/600x400/34495e/FFFFFF/png?text=Mindful+Programming',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 8,
+        title: 'Advanced Workout Routines for Developers',
+        category: 'Health & Fitness',
+        excerpt: 'Specialized exercise routines designed for professionals who spend long hours at their desk.',
+        author: 'Varun',
+        readTime: '11 min',
+        postedDate: '2024-01-18',
+        rating: 4.8,
+        image: 'https://placehold.co/600x400/2980b9/FFFFFF/png?text=Workout+Routines',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 9,
+        title: 'Cloud Computing Fundamentals',
+        category: 'Tech',
+        excerpt: 'Understanding the basics of cloud computing and its implementation in modern software development.',
+        author: 'Sushant',
+        readTime: '13 min',
+        postedDate: '2024-01-16',
+        rating: 4.9,
+        image: 'https://placehold.co/600x400/8e44ad/FFFFFF/png?text=Cloud+Computing',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 10,
+        title: 'Success Habits of Tech Leaders',
+        category: 'Motivation',
+        excerpt: 'Discover the daily routines and habits that make successful tech leaders stand out.',
+        author: 'Girish',
+        readTime: '8 min',
+        postedDate: '2024-01-14',
+        rating: 4.7,
+        image: 'https://placehold.co/600x400/c0392b/FFFFFF/png?text=Success+Habits',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 11,
+        title: 'Data Structures Made Simple',
+        category: 'Coding',
+        excerpt: 'A beginner-friendly guide to understanding and implementing common data structures.',
+        author: 'Harsh',
+        readTime: '14 min',
+        postedDate: '2024-01-11',
+        rating: 4.8,
+        image: 'https://placehold.co/600x400/27ae60/FFFFFF/png?text=Data+Structures',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    },
+    {
+        id: 12,
+        title: 'Nutrition Tips for Night Owls',
+        category: 'Health & Fitness',
+        excerpt: 'Healthy eating strategies for developers and tech professionals who work late hours.',
+        author: 'Varun',
+        readTime: '7 min',
+        postedDate: '2024-01-09',
+        rating: 4.6,
+        image: 'https://placehold.co/600x400/16a085/FFFFFF/png?text=Nutrition',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+    }
+];
